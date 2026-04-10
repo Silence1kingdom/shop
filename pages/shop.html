@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse Aurora Store products with smart filtering and sorting."/>
+    <title>Shop | Aurora Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="../assets/js/app.js" defer></script>
+  </head>
+  <body class="page page--shop" data-shop-page>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container site-header__inner">
+        <a href="./index.html" class="brand" aria-label="Aurora Store home">
+          <span class="brand__mark" aria-hidden="true">A</span>
+          <span class="brand__name" data-i18n="brand.name">Aurora Store</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
+          <a class="site-nav__link" href="./index.html" data-i18n="nav.home">Home</a>
+          <a class="site-nav__link site-nav__link--active" href="./shop.html" data-i18n="nav.shop">Shop</a>
+          <a class="site-nav__link" href="./shop.html" data-i18n="nav.product">Products</a>
+          <a class="site-nav__link" href="./cart.html" data-i18n="nav.cart">Cart</a>
+          <a class="site-nav__link" href="./login.html" data-i18n="nav.login">Login</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-btn" type="button" aria-label="Toggle theme" data-theme-toggle>
+            <span data-theme-icon aria-hidden="true">🌙</span>
+          </button>
+          <button class="icon-btn" type="button" aria-label="Switch language" data-lang-toggle>
+            <span data-lang-icon>🇬🇧 EN</span>
+          </button>
+          <a class="icon-btn icon-btn--cart" href="./cart.html" aria-label="Open cart">
+            <span aria-hidden="true">🛒</span>
+            <span class="cart-counter" data-cart-count>0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section shop-hero">
+        <div class="container">
+          <p class="eyebrow" data-i18n="shop.eyebrow">Curated Catalog</p>
+          <h1 data-i18n="shop.title">Find what fits your everyday style.</h1>
+          <p class="shop-hero__text" data-i18n="shop.subtitle">
+            Filter by category and sort by price or popularity to find products faster.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="container shop-layout">
+          <aside class="card shop-filters" aria-label="Product filters">
+            <div class="shop-filters__head">
+              <h2 data-i18n="shop.filters">Filters</h2>
+              <button class="btn btn--sm btn--outline" type="button" data-clear-filters data-i18n="shop.clear">
+                Clear
+              </button>
+            </div>
+
+            <fieldset class="filter-group">
+              <legend class="filter-group__title" data-i18n="shop.category">Category</legend>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="wearables" />
+                <span data-i18n="categories.wearables">Wearables</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="home-office" />
+                <span data-i18n="categories.homeOffice">Home Office</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="wellness" />
+                <span data-i18n="categories.wellness">Wellness</span>
+              </label>
+            </fieldset>
+
+            <fieldset class="filter-group">
+              <legend class="filter-group__title" data-i18n="shop.price">Price</legend>
+              <label class="filter-option">
+                <input type="radio" name="price" value="all" checked />
+                <span data-i18n="shop.priceAll">All Prices</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="under-75" />
+                <span data-i18n="shop.priceUnder">Under $75</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="75-150" />
+                <span data-i18n="shop.priceRange">$75 - $150</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="over-150" />
+                <span data-i18n="shop.priceOver">Over $150</span>
+              </label>
+            </fieldset>
+          </aside>
+
+          <div class="shop-content">
+            <div class="shop-toolbar card">
+              <div class="shop-toolbar__meta">
+                <strong data-result-count>0 products</strong>
+              </div>
+              <label class="shop-sort">
+                <span class="shop-sort__label" data-i18n="shop.sortBy">Sort by</span>
+                <select class="input" data-sort-select aria-label="Sort products">
+                  <option value="featured" data-i18n="shop.sortFeatured">Featured</option>
+                  <option value="price-asc" data-i18n="shop.sortPriceLow">Price: Low to High</option>
+                  <option value="price-desc" data-i18n="shop.sortPriceHigh">Price: High to Low</option>
+                  <option value="rating-desc" data-i18n="shop.sortRating">Top Rated</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="product-grid shop-grid" data-shop-grid aria-live="polite"></div>
+
+            <div class="shop-empty card" data-empty-state hidden>
+              <h3 data-i18n="shop.noResults">No products match your filters</h3>
+              <p data-i18n="shop.tryAgain">Try removing one or more filters to view more items.</p>
+              <button class="btn btn--primary" type="button" data-clear-filters data-i18n="shop.reset">
+                Reset filters
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p data-i18n="footer.copyright">© 2026 Aurora Store. Crafted for modern commerce.</p>
+        <div class="site-footer__links">
+          <a href="./signup.html" data-i18n="footer.create">Create account</a>
+          <a href="./checkout.html" data-i18n="footer.checkout">Checkout</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast-stack" aria-live="polite" aria-atomic="true" data-toast-stack></div>
+  </body>
+</html>

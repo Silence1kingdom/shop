@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aurora Store - Premium Everyday Essentials">
+    <title>Aurora Store | Premium Essentials</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a href="./index.html" class="brand">
+                <span class="brand__mark">A</span>
+                <span class="brand__name" data-i18n="brand.name">Aurora Store</span>
+            </a>
+            
+            <button class="nav-toggle" data-nav-toggle aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="site-nav" id="site-nav" data-nav aria-label="Main navigation">
+                <a href="./index.html" class="site-nav__link site-nav__link--active" data-i18n="nav.home">Home</a>
+                <a href="./shop.html" class="site-nav__link" data-i18n="nav.shop">Shop</a>
+                <a href="./shop.html" class="site-nav__link" data-i18n="nav.product">Products</a>
+                <a href="./cart.html" class="site-nav__link" data-i18n="nav.cart">Cart</a>
+                <a href="./login.html" class="site-nav__link" data-i18n="nav.login">Login</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="icon-btn" type="button" aria-label="Toggle theme" data-theme-toggle>
+                    <span data-theme-icon aria-hidden="true">🌙</span>
+                </button>
+                <button class="icon-btn" type="button" aria-label="Switch language" data-lang-toggle>
+                    <span data-lang-icon>🇬🇧 EN</span>
+                </button>
+                <a class="icon-btn icon-btn--cart" href="./cart.html" aria-label="Open cart">
+                    <span aria-hidden="true">🛒</span>
+                    <span class="cart-counter" data-cart-count>0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">New Collection 2026</p>
+                    <h1 class="hero__title" data-i18n="hero.title">Premium essentials designed for everyday flow.</h1>
+                    <p class="hero__text" data-i18n="hero.text">
+                        Discover curated products crafted for comfort, performance, and timeless style. 
+                        Fast shipping, easy returns, and a seamless shopping experience.
+                    </p>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary btn--lg" href="./shop.html" data-i18n="hero.shopNow">Shop now</a>
+                        <a class="btn btn--secondary btn--lg" href="./product-detail.html?id=1" data-i18n="hero.viewProduct">View featured product</a>
+                    </div>
+                </div>
+                <div class="hero__media card">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Lifestyle products arranged on wooden table" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section section--muted">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="categories.title">Shop by category</h2>
+                    <a href="./shop.html" class="link" data-i18n="categories.browse">Browse all</a>
+                </div>
+                <div class="category-grid">
+                    <article class="card category-card">
+                        <h3 data-i18n="categories.wearables">Wearables</h3>
+                        <p data-i18n="categories.wearablesDesc">Smart accessories with modern comfort.</p>
+                    </article>
+                    <article class="card category-card">
+                        <h3 data-i18n="categories.homeOffice">Home Office</h3>
+                        <p data-i18n="categories.homeOfficeDesc">Focused setups for creators and builders.</p>
+                    </article>
+                    <article class="card category-card">
+                        <h3 data-i18n="categories.wellness">Wellness</h3>
+                        <p data-i18n="categories.wellnessDesc">Tools that support healthier routines.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="products.featured">Featured products</h2>
+                    <a href="./shop.html" class="link" data-i18n="products.seeMore">See more</a>
+                </div>
+                <div class="product-grid" id="featured-products">
+                    <!-- Products rendered via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section section--muted">
+            <div class="container">
+                <div class="newsletter card">
+                    <div>
+                        <h2 data-i18n="newsletter.title">Get 15% off your first order</h2>
+                        <p data-i18n="newsletter.subtitle">Subscribe for product drops, offers, and design stories.</p>
+                    </div>
+                    <form class="newsletter__form" novalidate data-newsletter-form>
+                        <label for="newsletter-email" class="sr-only" data-i18n="newsletter.emailLabel">Email address</label>
+                        <input class="input" id="newsletter-email" name="email" type="email" 
+                               placeholder="you@example.com" required aria-label="Email address" data-i18n-placeholder="newsletter.placeholder">
+                        <button class="btn btn--primary" type="submit" data-i18n="newsletter.button">Subscribe</button>
+                    </form>
+                    <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p data-i18n="footer.copyright">© 2026 Aurora Store. Crafted for modern commerce.</p>
+            <div class="site-footer__links">
+                <a href="./signup.html" data-i18n="footer.create">Create account</a>
+                <a href="./checkout.html" data-i18n="footer.checkout">Checkout</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-stack" aria-live="polite" aria-atomic="true" data-toast-stack></div>
+    
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
